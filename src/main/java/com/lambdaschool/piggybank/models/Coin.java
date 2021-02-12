@@ -7,14 +7,12 @@ import javax.persistence.*;
 
 public class Coin
 {
-    @Id
-    @GenerateValue(strategy = GenerationType.AUTO)
-    private long coinid;
+    @Id @GeneratedValue(strategy = GenerationType.AUTO) private long coinid;
 
     private String name;
-    private String namesPlural;
+    private String nameplural;
     private double value;
-    private int numberOf;
+    private int numberof;
 
     public Coin()
     {
@@ -23,14 +21,14 @@ public class Coin
 
     public Coin (
           String name,
-          String namesPlural,
+          String nameplural,
           double value,
-          int numberOf)
+          int numberof)
     {
         this.name = name;
-        this.namesPlural = namesPlural;
+        this.nameplural = nameplural;
         this.value = value;
-        this.numberOf = numberOf;
+        this.numberof = numberof;
     }
 
     public long getCoinId()
@@ -55,12 +53,12 @@ public class Coin
 
     public String getNamesPlural()
     {
-        return namesPlural;
+        return nameplural;
     }
 
     public void setNamesPlural(String names)
     {
-        this.namesPlural = namesPlural;
+        this.nameplural = nameplural;
     }
 
     public double getValue()
@@ -75,12 +73,12 @@ public class Coin
 
     public int getNumberOf()
     {
-        return numberOf;
+        return numberof;
     }
 
     public void setNumberOf(int num)
     {
-        this.numberOf = numberOf;
+        this.numberof = numberof;
     }
 
     @Override
@@ -88,9 +86,9 @@ public class Coin
     {
         return "Coin{" +
                 "name=" + name +
-                "namesPlural=" + namesPlural +
+                "namesPlural=" + nameplural +
                 "value=" + value +
-                "Number of=" + numberOf +
+                "Number of=" + numberof +
                 "}";
     }
 
