@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS coins(coinid INT,
     name VARCHAR(255),
     nameplural VARCHAR(255),
     value DOUBLE,
-    numberOf INT);
+    numberof INT);
 
 CREATE SEQUENCE IF NOT EXISTS hibernate_sequence;
 
@@ -15,7 +15,7 @@ CREATE SEQUENCE IF NOT EXISTS hibernate_sequence;
 DELETE
 FROM coins;
 
-INSERT INTO coins (coinid, name, nameplural, value, numberOf)
+INSERT INTO coins (coinid, name, nameplural, value, numberof)
            VALUES (1, 'Quarter', 'Quarters', 0.25, 1),
                   (2, 'Dime', 'Dimes', 0.10, 1),
                   (3, 'Dollar', 'Dollars', 1.00, 5),
