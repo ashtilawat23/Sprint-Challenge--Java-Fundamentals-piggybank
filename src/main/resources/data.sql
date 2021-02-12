@@ -11,6 +11,7 @@ CREATE SEQUENCE IF NOT EXISTS hibernate_sequence;
 
 /*
  This is the actual seed data
+ What should be used as a test
  */
 DELETE
 FROM coins;
