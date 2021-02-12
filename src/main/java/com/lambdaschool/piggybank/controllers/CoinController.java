@@ -50,20 +50,20 @@ public class CoinController
         {
             // Find total value of every coin summed together
             // getQuantity() * getName()
-            if(c.getNumberOf() == 1)
+            if(c.getQuantity() == 1)
             {
-                System.out.println(c.getNumberOf() + " " + c.getName());
+                System.out.println(c.getQuantity() + " " + c.getName());
             }
             else
             {
-                System.out.println(c.getNumberOf() + " " + c.getNamesPlural());
+                System.out.println(c.getQuantity() + " " + c.getNamesPlural());
             }
         }
 
         double total = 0.0;
         for(Coin c : myList)
         {
-            total = total + (c.getNumberOf() * c.getValue());
+            total = total + (c.getQuantity() * c.getValue());
         }
         System.out.println("The piggy bank holds " + total);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -79,13 +79,13 @@ public class CoinController
         List<Coin> myList = new ArrayList<>();
         coinrepo.findAll().iterator().forEachRemaining(myList::add);
         // problem is that when it sorts it is putting 10 pennies before 3 nickles
-        myList.sort((c1, c2) -> (c1.getNumberOf() + c2.getNumberOf()));
+        myList.sort((c1, c2) -> (c1.getQuantity() + c2.getQuantity()));
 
         // For loop derives total value of myList
         double total = 0.0;
         for(Coin c : myList)
         {
-            total = total + (c.getNumberOf() * c.getValue());
+            total = total + (c.getQuantity() * c.getValue());
 
         }
         System.out.println("Line 89 ------------> " + total); // will be total in piggy bank
@@ -101,12 +101,12 @@ public class CoinController
         {
             for(Coin c : myList)
             {
-                if(amountTotal >= c.getValue() * c.getNumberOf())
+                if(amountTotal >= c.getValue() * c.getQuantity())
                 {
-                    amountTotal = amountTotal - (c.getValue() * c.getNumberOf());
+                    amountTotal = amountTotal - (c.getValue() * c.getQuantity());
                     // System.out.println("Line 105 --------> " + String.format("%.2f",amountTotal));
                     System.out.println(c.getValue());
-                    c.setNumberOf(0);
+                    c.setQuantity(0);
                 }
                 else
                 {
@@ -119,14 +119,14 @@ public class CoinController
         for(Coin c : myList)
         {
             // Find total value of every coin summed together
-            if(c.getNumberOf() == 1)
+            if(c.getQuantity() == 1)
             {
-                System.out.println(c.getNumberOf() + " " + c.getName());
+                System.out.println(c.getQuantity() + " " + c.getName());
 
             }
-            else if(c.getNumberOf() > 1)
+            else if(c.getQuantity() > 1)
             {
-                System.out.println(c.getNumberOf() + " " + c.getNamesPlural());
+                System.out.println(c.getQuantity() + " " + c.getNamesPlural());
             }
             else
             {

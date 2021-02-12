@@ -12,7 +12,7 @@ public class Coin
     private String name;
     private String nameplural;
     private double value;
-    private int numberof;
+    private int quantity;
 
     public Coin()
     {
@@ -23,12 +23,12 @@ public class Coin
           String name,
           String nameplural,
           double value,
-          int numberof)
+          int quantity)
     {
         this.name = name;
         this.nameplural = nameplural;
         this.value = value;
-        this.numberof = numberof;
+        this.quantity = quantity;
     }
 
     public long getCoinId()
@@ -71,14 +71,14 @@ public class Coin
         this.value = value;
     }
 
-    public int getNumberOf()
+    public int getQuantity()
     {
-        return numberof;
+        return quantity;
     }
 
-    public void setNumberOf(int num)
+    public void setQuantity(int num)
     {
-        this.numberof = numberof;
+        this.quantity = quantity;
     }
 
     @Override
@@ -88,7 +88,7 @@ public class Coin
                 "name=" + name +
                 "namesPlural=" + nameplural +
                 "value=" + value +
-                "Number of=" + numberof +
+                "Quantity=" + quantity +
                 "}";
     }
 
